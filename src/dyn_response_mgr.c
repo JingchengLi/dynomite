@@ -88,6 +88,8 @@ rspmgr_incr_non_quorum_responses_stats(struct response_mgr *rspmgr)
                         client_non_quorum_w_responses);
 
 }
+
+return the correct response here
 struct msg*
 rspmgr_get_response(struct response_mgr *rspmgr)
 {

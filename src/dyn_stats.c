@@ -1049,6 +1049,8 @@ parse_request(int sd, struct stats_cmd *st_cmd)
                             g_read_consistency = DC_ONE;
                         else if (strcmp(type, "/dc_quorum") == 0)
                             g_read_consistency = DC_QUORUM;
+                        else if (strcmp(type, "/dc_quorum_safe") == 0)
+                            g_read_consistency = DC_QUORUM_SAFE;
                         else
                             st_cmd->cmd = CMD_UNKNOWN;
                     } else if (strncmp(op, "/write", 6) == 0) {
@@ -1057,6 +1059,8 @@ parse_request(int sd, struct stats_cmd *st_cmd)
                             g_write_consistency = DC_ONE;
                         else if (strcmp(type, "/dc_quorum") == 0)
                             g_write_consistency = DC_QUORUM;
+                        else if (strcmp(type, "/dc_quorum_safe") == 0)
+                            g_write_consistency = DC_QUORUM_SAFE;
                         else
                             st_cmd->cmd = CMD_UNKNOWN;
                     } else

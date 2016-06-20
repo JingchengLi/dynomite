@@ -214,6 +214,7 @@ typedef enum dyn_error {
 typedef enum consistency {
     DC_ONE = 0,
     DC_QUORUM = 1
+    DC_QUORUM_SAFE = 1
 } consistency_t;
 
 static inline char*
@@ -223,6 +224,7 @@ get_consistency_string(consistency_t cons)
     {
         case DC_ONE: return "DC_ONE";
         case DC_QUORUM: return "DC_QUORUM";
+        case DC_QUORUM_SAFE: return "DC_QUORUM_SAFE";
     }
     return "INVALID CONSISTENCY";
 }
